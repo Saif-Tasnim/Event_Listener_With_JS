@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js DOM SUmmary</title>
+</head>
+<body>
+    <h1>Final DOM Event Handler</h1>
+    <h3 id="text">Default text</h3>
+    <button onclick="handleOnClick()">Add On Click Function</button>
+    <button id="second">Id Function</button>
+     <br><br><br>
+     <fieldset>
+        <legend> Enter Your Name </legend>
+        <input id="inputf" type="text">
+        <button id="update">Update</button>
+     </fieldset>
+     <p id="p"></p>
+    <script>
+        function handleOnClick(){
+            const h3 = document.getElementById('text');
+            h3.innerText="button click so i change";
+        }
+
+        document.getElementById('second').addEventListener('click',function(){
+            const h3 = document.getElementById('text');
+            h3.innerText="after updating i have again change";
+        })
+
+
+        document.getElementById('update').addEventListener('click',function(){
+             const inputText = document.getElementById('inputf');
+             inputValue = inputText.value;
+             const p = document.getElementById('p');
+             p.innerText = inputValue;
+             inputText.value = '';
+        })
+    </script>
+</body>
+</html>
