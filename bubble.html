@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubble</title>
+</head>
+<body>
+    <h1>Exploring Event Bubble Part</h1>
+    <section>
+        <ul id="list-ul">
+            <li id="item-1">Lorem, ipsum.</li>
+            <li id="item-2">Earum, at.</li>
+            <li id="item-3">Ipsum, amet?</li>
+            <li id="item-4">Vero, eos.</li>
+            <li id="item-5">Quos, fugit.</li>
+            <li id="item-6">Dignissimos, fuga?</li>
+        </ul>
+    </section>
+
+    <script>
+        document.getElementById('item-2').addEventListener('click',function(){
+            console.log("item-2 clicked");
+            // event.stopPropagation();
+            event.stopImmediatePropagation();
+        })
+        document.getElementById('item-2').addEventListener('click',function(){
+            console.log("item-2 second clicked")
+        })
+        document.getElementById('item-2').addEventListener('click',function(){
+            console.log("item-2 third clicked")
+        })
+        document.getElementById('item-2').addEventListener('click',function(){
+            console.log("item-2 final clicked")
+        })
+
+        document.getElementById('list-ul').addEventListener('click',function(){
+            console.log("ul clicked")
+        })
+    </script>
+</body>
+</html>

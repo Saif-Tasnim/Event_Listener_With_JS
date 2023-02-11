@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegate</title>
+</head>
+<body>
+    <h1>Function of Event Delegate</h1>
+    <section>
+        <ul id="list-item">
+            <li class="list">Laudantium, molestiae delectus?</li>
+            <li class="list">Lorem, ipsum dolor.</li>
+            <li class="list">Cupiditate, voluptate id.</li>
+            <li class="list">Eaque, magnam perferendis?</li>
+            <li class="list">Quis, ad numquam?</li>
+            <li class="list">Quibusdam, dignissimos veritatis.</li>
+        </ul>
+        <button id="ad">Add Items</button>
+    </section>
+
+    <script>
+        // const items = document.getElementsByClassName('list');
+        // for(const item of items){
+        //     item.addEventListener('click',function(event){
+        //         event.target.parentNode.removeChild(event.target);
+        //     })
+        // }
+
+        document.getElementById('list-item').addEventListener('click',function(event){
+           event.target.parentNode.removeChild(event.target);
+        })
+
+        const ad = document.getElementById('ad').addEventListener('click',function(){
+            const list = document.getElementById('list-item');
+            const li = document.createElement('li');
+            li.innerText="new item added by js";
+            li.classList.add("list")
+            list.appendChild(li);
+        })
+    </script>
+</body>
+</html>
